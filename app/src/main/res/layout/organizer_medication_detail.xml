@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/medication_appointment"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+           />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="12dp"
+            android:text="@string/medicine_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toBottomOf="@+id/title_tv"
+            tools:layout_editor_absoluteX="21dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/name_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+
+            app:layout_constraintTop_toBottomOf="@+id/name_tv">
+
+            <EditText
+                android:id="@+id/name_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_transparent"
+                android:focusableInTouchMode="true"
+                android:hint="@string/medicine_name"
+                android:inputType="text"
+                android:nextFocusDown="@+id/email"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/num_of_cans_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/number_of_cans"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_card_view" />
+
+        <include
+            android:id="@+id/num_of_cans_counter"
+            layout="@layout/counter_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="@+id/num_of_cans_tv"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="@+id/num_of_cans_tv"
+            app:layout_constraintTop_toBottomOf="@+id/num_of_cans_tv" />
+
+        <TextView
+            android:id="@+id/numb_of_bars_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@string/number_of_bars"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/num_of_cans_tv"
+            app:layout_constraintEnd_toStartOf="@+id/numb_of_tablets_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num_of_cans_tv"
+            app:layout_constraintTop_toTopOf="@+id/num_of_cans_tv"
+            app:layout_constraintVertical_bias="0" />
+
+        <include
+            android:id="@+id/num_of_bars_counter"
+            layout="@layout/counter_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="@+id/numb_of_bars_tv"
+            app:layout_constraintStart_toStartOf="@+id/numb_of_bars_tv"
+            app:layout_constraintTop_toBottomOf="@+id/numb_of_bars_tv" />
+
+        <TextView
+            android:id="@+id/numb_of_tablets_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:text="@string/number_of_tablets"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/numb_of_bars_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numb_of_bars_tv"
+            app:layout_constraintTop_toTopOf="@+id/numb_of_bars_tv" />
+
+        <include
+            android:id="@+id/num_of_tablets_counter"
+            layout="@layout/counter_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="@+id/numb_of_tablets_tv"
+            app:layout_constraintStart_toStartOf="@+id/numb_of_tablets_tv"
+            app:layout_constraintTop_toBottomOf="@+id/numb_of_tablets_tv" />
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="4dp"
+            android:text="@string/first_dose_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toBottomOf="@+id/num_of_tablets_counter"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/time_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time_tv">
+
+            <Button
+                android:id="@+id/time_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_transparent"
+                android:gravity="left|center_vertical|center_horizontal|center|start"
+                android:hint="@string/select_time"
+                android:nextFocusDown="@+id/phone"
+                android:padding="16dp"
+                android:textAlignment="viewStart"
+                android:textColorHint="@color/gray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/dose_times_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="12dp"
+            android:text="@string/number_of_doses_pee_day"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/dose_times_card_view"
+            app:layout_constraintTop_toBottomOf="@+id/time_card_view" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dose_times_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@+id/dose_times_tv">
+
+            <EditText
+                android:id="@+id/dose_times_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_transparent"
+                android:focusableInTouchMode="true"
+                android:gravity="left|center_vertical|center_horizontal|center|start"
+                android:hint="@string/number_of_doses_pee_day"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/email"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/dose_days_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="12dp"
+            android:text="@string/number_of_days"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/dose_days_card_view"
+            app:layout_constraintTop_toBottomOf="@+id/dose_times_card_view" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dose_days_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dose_days_tv">
+
+            <EditText
+                android:id="@+id/dose_days_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_transparent"
+                android:focusableInTouchMode="true"
+                android:gravity="left|center_vertical|center_horizontal|center|start"
+                android:hint="@string/number_of_days"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/email"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/ornage_round_shape"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/submit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp"
+
+            app:layout_constraintTop_toBottomOf="@+id/dose_days_card_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

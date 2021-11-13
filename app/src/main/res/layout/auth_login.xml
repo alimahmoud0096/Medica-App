@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+   <com.leo.simplearcloader.SimpleArcLoader
+        android:id="@+id/loader"
+        android:layout_centerInParent="true"
+        android:layout_width="60dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="60dp"
+        app:arc_style="simple_arc"/>
+
+    <ScrollView
+        android:layout_below="@id/logo_ic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#fff"
+     >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/border_gray_round_shape"
+
+                android:drawablePadding="8dp"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/pass1"
+                android:padding="8dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/pass1_layout"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/border_gray_round_shape"
+
+                app:layout_constraintTop_toBottomOf="@+id/phone">
+
+                <EditText
+                    android:id="@+id/pass1"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="-1dp"
+                    android:layout_toStartOf="@+id/pass_eye_login"
+                    android:background="@color/transparent"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@+id/login_btn"
+                    android:padding="10dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textDirection="locale" />
+
+                <ImageView
+                    android:id="@+id/pass_eye_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="6dp"
+                    android:padding="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:src="@drawable/avd_hide_password__0" />
+            </RelativeLayout>
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/forget_password_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="50dp"
+                android:layout_below="@+id/pass1_layout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/reset_from_here"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <com.elprog.midica.CustomViews.MyButton
+                android:id="@+id/login_btn"
+                android:layout_width="376dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/ornage_round_shape"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:text="@string/enter"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                android:layout_gravity="center_horizontal" />
+
+            <com.elprog.midica.CustomViews.MyButton
+                android:id="@+id/facebook_btn"
+                android:layout_width="382dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/blue_round_shape"
+
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/fb"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+
+                android:layout_gravity="center_horizontal" />
+
+            <com.elprog.midica.CustomViews.MyButton
+                android:id="@+id/google_btn"
+                android:layout_width="374dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/red_rounded_shape"
+
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/google"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                android:layout_gravity="center_horizontal" />
+
+            <com.elprog.midica.CustomViews.MyButton
+                android:id="@+id/signup_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:background="@color/transparent"
+                android:drawablePadding="8dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="32dp"
+                android:text="@string/register"
+                android:textAlignment="center"
+                android:textColor="@color/dodger_blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.elprog.midica.CustomViews.MyTextView
+        android:id="@+id/version_tv"
+        android:layout_width="45dp"
+        android:layout_height="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:text="@string/version_number"
+android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+ />
+
+    <ImageView
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/botoomblue"
+
+       />
+</RelativeLayout>

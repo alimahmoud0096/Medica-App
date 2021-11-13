@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FullScreenDialogStyle" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:buttonCornerRadius">0dp</item>
+        <item name="android:animateOnClick">true</item>
+        <item name="android:background">#fff</item>
+    </style>
+</resources>

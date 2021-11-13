@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@color/square_shadow_color"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:divider="@color/square_shadow_color"
+    android:dividerHeight="0px"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="3"
+    >
+        <ImageView
+            android:id="@+id/doc_img"
+            android:layout_width="100dp"
+            android:layout_margin="15dp"
+            android:layout_height="100dp"
+
+            android:background="@drawable/square_shape_transparent"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+
+             />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="2.5"
+    android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/doc_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hbmnbnm"
+            android:maxLines="1"
+            android:padding="2dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+             />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:maxLines="3"
+            android:padding="2dp"
+            android:text="hbmnbnm"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/speciality_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="3"
+            android:text="hbmnbnm"
+            android:padding="2dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/price_range_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:padding="2dp"
+            android:text="hbmnbnm"
+            android:textAlignment="viewStart"
+            android:textColor="@color/dodger_blue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            />
+</LinearLayout>
+        <LinearLayout
+            android:layout_weight=".5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:gravity="center_vertical"
+
+            >
+        <TextView
+            android:id="@+id/rate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/star_ic"
+            android:drawablePadding="8dp"
+            android:layout_gravity="center_horizontal"
+            android:maxLines="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+
+        <Button
+            android:id="@+id/book_btn"
+            android:layout_width="64dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ornage_round_shape"
+            android:text="@string/book"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+        </LinearLayout>
+</LinearLayout>
+        <TextView
+            android:id="@+id/desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:maxLines="3"
+            android:text="jbkjbjkbjhvhjv"
+            android:layout_marginStart="20dp"
+
+            android:padding="4dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+             />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

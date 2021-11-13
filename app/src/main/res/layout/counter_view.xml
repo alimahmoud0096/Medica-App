@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:id="@+id/minus_view"
+            android:layout_width="3dp"
+            android:layout_height="31dp"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:scaleType="center"
+
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/counter_tv"
+            app:layout_constraintStart_toEndOf="@+id/counter_tv"
+            app:layout_constraintTop_toTopOf="@+id/counter_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/plus_view"
+            android:layout_width="29dp"
+            android:layout_height="30dp"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:scaleType="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/counter_tv"
+            app:layout_constraintEnd_toStartOf="@+id/counter_tv"
+            app:layout_constraintTop_toTopOf="@+id/counter_tv"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/add_ic_black" />
+
+        <TextView
+            android:id="@+id/counter_tv"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="-2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/share_my_data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/orange_round_bottom_shape"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/back_ic" />
+
+            <TextView
+                android:id="@+id/share_my_data_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/exit"
+                android:text="@string/menu"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/call_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:srcCompat="@drawable/call_ic"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/notification_ic"/>
+
+            <ImageView
+                android:id="@+id/notification_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/notifications" />
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_view_sidebar"
+            android:layout_below="@id/share_my_data_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+             android:visibility="gone"
+            android:src="@drawable/com_facebook_profile_picture_blank_portrait"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp"
+           />
+
+        <TextView
+            android:id="@+id/user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:layout_toEndOf="@id/user_view_sidebar"
+            android:layout_below="@id/share_my_data_layout"
+            android:text="user name"
+            android:visibility="gone"
+            android:textAlignment="viewStart"
+            android:textSize="24sp"
+            android:textStyle="bold"
+           />
+
+        <TextView
+            android:id="@+id/user_email_tv"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/user_name_tv"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:text="email"
+            android:visibility="gone"
+            android:layout_toEndOf="@id/user_view_sidebar"
+            android:textAlignment="viewStart"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/edit_profile_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/border_gray_round_shape"
+            android:text="@string/edit_profile"
+            android:visibility="gone"
+            android:textAllCaps="true"
+            android:padding="8dp"
+            android:layout_toEndOf="@id/user_view_sidebar"
+            android:layout_below="@id/user_email_tv"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            />
+<LinearLayout
+    android:layout_below="@id/edit_profile_btn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp">
+        <Button
+            android:id="@+id/appointment_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:text="@string/appointment"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+             />
+
+        <Button
+            android:id="@+id/orders_btn"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/orders"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+           />
+
+        <Button
+            android:id="@+id/online_doc_btn"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawableStart="@drawable/doc_online_ic"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/online_doctors"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/hot_offers_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:text="@string/hot_offers"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/organizer_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:text="@string/organizer"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/patient_profile_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/patient_profile"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+             />
+
+        <Button
+            android:id="@+id/medica_for_doc_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/signup_for_doctor"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/language_tv"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/language"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+           />
+    <androidx.cardview.widget.CardView
+        android:layout_width="80dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/language_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/transparent">
+
+            <Button
+                android:id="@+id/en_btn"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@color/dodger_blue"
+                android:gravity="center"
+                android:text="@string/en"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/ar_btn"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="@string/ar"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
+        <Button
+            android:id="@+id/invite_friend_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/invite_friends"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/favorite_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:text="@string/favorite"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+           />
+
+        <Button
+            android:id="@+id/help_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_bottom_shape"
+
+            android:drawablePadding="16dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/help"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/medica_card_btn"
+            android:layout_width="310dp"
+            android:layout_height="41dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/medica_card"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:visibility="gone"
+           />
+
+        <Button
+            android:id="@+id/live_chat_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/live_chat"
+
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+android:layout_marginStart="32dp"
+            android:visibility="gone"
+           />
+
+        <Button
+            android:id="@+id/make_suggestion_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/line_bottom_shape"
+
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/make_suggestion"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:visibility="gone"
+           />
+
+        <Button
+            android:id="@+id/terms_cond_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginStart="32dp"
+
+
+            android:background="@drawable/line_bottom_shape"
+           android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/terms_cond"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:visibility="gone"
+           />
+
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/line_bottom_shape"
+
+            android:drawablePadding="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:text="@string/Logout"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+
+            />
+</LinearLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/logo_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:background="#2196F3"
+    android:gravity="center_horizontal|center_vertical"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp">
+
+        <ImageView
+            android:id="@+id/me_splash_logo"
+            android:layout_width="70dp"
+            android:layout_height="61dp"
+            android:scaleType="fitEnd"
+
+            />
+
+        <ImageView
+            android:id="@+id/di_splash_logo"
+            android:layout_width="15dp"
+            android:layout_height="7dp"
+            android:layout_marginBottom="6dp"
+            android:alpha="0"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/ca_splash_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitStart"
+
+            />
+
+        <ImageView
+            android:id="@+id/health_splash_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:alpha="0"
+
+            />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/splash_pb_loading"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="330dp"
+        android:layout_height="41dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/black_border_round_shape"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/splash_progress_bar" />
+
+    <com.elprog.midica.CustomViews.MyTextView
+        android:id="@+id/version_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="600dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/version_number"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+</RelativeLayout>

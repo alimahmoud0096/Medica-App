@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/myTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/city"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shadow_layer_list"
+                android:minHeight="40dp"
+                android:padding="8dp"
+                android:spinnerMode="dropdown"
+               
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myTextView" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/country"
+                app:layout_constraintEnd_toEndOf="@+id/country"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/country"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/city_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="16dp"
+                android:text="@string/state"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+
+                app:layout_constraintTop_toBottomOf="@+id/country"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <Spinner
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shadow_layer_list"
+                android:minHeight="40dp"
+                android:padding="8dp"
+                android:spinnerMode="dropdown"
+
+                app:layout_constraintTop_toBottomOf="@+id/city_tv" />
+
+            <ImageView
+                android:id="@+id/city_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:rotation="90"
+
+                app:layout_constraintBottom_toBottomOf="@+id/city"
+                app:layout_constraintEnd_toEndOf="@+id/city"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/city"
+                app:layout_constraintTop_toTopOf="@+id/city"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/region_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="16dp"
+                android:text="@string/region"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="@+id/region"
+                app:layout_constraintTop_toBottomOf="@+id/city" />
+
+            <Spinner
+                android:id="@+id/region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shadow_layer_list"
+                android:minHeight="40dp"
+                android:padding="8dp"
+                android:spinnerMode="dropdown"
+
+                app:layout_constraintTop_toBottomOf="@+id/region_tv" />
+
+            <ImageView
+                android:id="@+id/region_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:rotation="90"
+
+                app:layout_constraintBottom_toBottomOf="@+id/region"
+                app:layout_constraintEnd_toEndOf="@+id/region"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/region"
+                app:layout_constraintTop_toTopOf="@+id/region"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/myTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="16dp"
+                android:text="@string/speciality"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="@+id/speciality_search"
+                app:layout_constraintTop_toBottomOf="@+id/region" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/speciality_search"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shadow_layer_list"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:iconifiedByDefault="false"
+
+                app:layout_constraintTop_toBottomOf="@+id/myTextView2"
+                app:queryHint="@string/search_for_speciality"
+                app:searchHintIcon="@null"
+                app:searchIcon="@null" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/speciality_search_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@android:color/white"
+                android:visibility="gone"
+
+                app:layout_constraintTop_toBottomOf="@+id/speciality_search" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/myTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="8dp"
+                android:text="@string/Degree"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="@+id/degree"
+                app:layout_constraintTop_toBottomOf="@+id/speciality_search_recycler" />
+
+            <Spinner
+                android:id="@+id/degree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shadow_layer_list"
+                android:minHeight="40dp"
+                android:padding="8dp"
+                android:spinnerMode="dropdown"
+
+                app:layout_constraintTop_toBottomOf="@+id/myTextView3" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+
+                app:layout_constraintBottom_toBottomOf="@+id/degree"
+                app:layout_constraintEnd_toEndOf="@+id/degree"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/degree"
+                app:layout_constraintTop_toTopOf="@+id/degree"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentRight="true" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/myTextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="8dp"
+                android:text="@string/medical_insurance"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="@+id/medical_insurance_search"
+                app:layout_constraintTop_toBottomOf="@+id/degree" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/medical_insurance_search"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shadow_layer_list"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:iconifiedByDefault="false"
+
+                app:layout_constraintTop_toBottomOf="@+id/myTextView4"
+                app:queryHint="@string/search_for_medical_insurance"
+                app:searchHintIcon="@null"
+                app:searchIcon="@null" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/medical_insurance_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@android:color/white"
+                android:visibility="gone"
+
+                app:layout_constraintTop_toBottomOf="@+id/medical_insurance_search" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/selected_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/price"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="@+id/min"
+                app:layout_constraintTop_toBottomOf="@+id/medical_insurance_recycler" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/min"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:background="@drawable/orange_circle_shape"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar"
+                app:layout_constraintEnd_toStartOf="@+id/seekbar"
+                app:layout_constraintStart_toStartOf="@+id/seekbar"
+                app:layout_constraintTop_toTopOf="@+id/seekbar" />
+
+            <com.elprog.midica.CustomViews.MyTextView
+                android:id="@+id/max"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:background="@drawable/orange_circle_shape"
+                android:gravity="center"
+                android:text="1000"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar"
+                app:layout_constraintEnd_toEndOf="@+id/seekbar"
+                app:layout_constraintStart_toEndOf="@+id/seekbar"
+                app:layout_constraintTop_toTopOf="@+id/seekbar" />
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="40dp"
+                android:layoutDirection="ltr"
+                app:isb_indicator_color="@color/dodger_blue"
+                app:isb_indicator_text_color="@color/white"
+                app:isb_indicator_text_size="18sp"
+                app:isb_max="1000"
+                app:isb_min="0"
+                app:isb_only_thumb_draggable="false"
+                app:isb_progress="0"
+                app:isb_seek_smoothly="true"
+                app:isb_show_tick_texts="true"
+                app:isb_thumb_color="@color/black"
+                app:isb_thumb_size="20dp"
+                app:isb_tick_marks_drawable="@drawable/orange_circle_shape"
+                app:isb_tick_marks_size="13dp"
+                app:isb_tick_texts_color="@color/dodger_blue"
+                app:isb_tick_texts_size="15sp"
+                app:isb_ticks_count="0"
+                app:isb_track_background_color="@color/gray"
+                app:isb_track_background_size="2dp"
+                app:isb_track_progress_color="@color/dodger_blue"
+                app:isb_track_progress_size="4dp"
+
+                app:layout_constraintEnd_toEndOf="@+id/medical_insurance_search"
+                app:layout_constraintStart_toStartOf="@+id/medical_insurance_search"
+                app:layout_constraintTop_toBottomOf="@+id/selected_price_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

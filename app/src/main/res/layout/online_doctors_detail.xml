@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/background_img_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@drawable/img_round_bottom_shape"
+               >
+
+                <ImageView
+                    android:id="@+id/background_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/img_round_bottom_shape"
+                    android:scaleType="fitXY"
+
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/back_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/background_img_layout"
+
+                app:layout_constraintTop_toTopOf="@+id/background_img_layout"
+                app:srcCompat="@drawable/back_ic" />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/back_ic"
+                app:layout_constraintEnd_toEndOf="@+id/background_img_layout"
+                app:layout_constraintStart_toEndOf="@+id/back_ic"
+                app:layout_constraintTop_toTopOf="@+id/back_ic" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/doctor_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/square_shadow_color"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@color/square_shadow_color"
+                android:dividerHeight="0px"
+                android:padding="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true"
+
+                app:layout_constraintTop_toBottomOf="@+id/background_img_layout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/doc_img"
+                        android:layout_width="80dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/square_shape_transparent"
+                        android:padding="3dp"
+                        android:scaleType="fitCenter"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/price_tv"
+                        app:layout_constraintEnd_toStartOf="@+id/doc_name_tv"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_weight="3"
+
+                        app:layout_constraintTop_toTopOf="@+id/doc_name_tv" />
+
+                    <TextView
+                        android:id="@+id/doc_name_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:maxLines="1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/rate_tv"
+                        app:layout_constraintHorizontal_weight="7"
+                        app:layout_constraintStart_toEndOf="@+id/doc_img"
+                        />
+
+                    <TextView
+                        android:id="@+id/speciality_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/doc_name_tv"
+                        app:layout_constraintStart_toStartOf="@+id/doc_name_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/doc_name_tv" />
+
+                    <TextView
+                        android:id="@+id/price_after_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="12dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dodger_blue"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/doc_img"
+                        app:layout_constraintStart_toStartOf="@+id/speciality_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/speciality_tv" />
+
+                    <com.elprog.midica.CustomViews.CustomTextView
+                        android:id="@+id/price_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dodger_blue"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/price_after_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/speciality_tv" />
+
+                    <TextView
+                        android:id="@+id/desc_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:maxLines="4"
+                        android:padding="4dp"
+                        android:textAlignment="viewStart"
+
+                        android:textColor="@color/black"
+                        android:textSize="11sp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/price_tv" />
+
+                    <TextView
+                        android:id="@+id/rate_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:drawableStart="@drawable/star_ic"
+                        android:drawablePadding="8dp"
+                        android:maxWidth="64dp"
+                        android:maxLines="1"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/doc_name_tv"
+                        tools:layout_editor_absoluteX="310dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/select_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layoutDirection="inherit"
+                android:padding="8dp"
+                android:text="@string/select_date"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/doctor_card"
+                app:layout_constraintTop_toBottomOf="@+id/doctor_card" />
+
+            <ImageView
+                android:id="@+id/calendar_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layoutDirection="inherit"
+
+                app:layout_constraintBottom_toBottomOf="@+id/select_date_tv"
+                app:layout_constraintEnd_toEndOf="@+id/doctor_card"
+                app:layout_constraintTop_toTopOf="@+id/select_date_tv" />
+
+            <FrameLayout
+                android:id="@+id/date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/select_date_tv">
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                    android:id="@+id/calender_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layoutDirection="locale"
+                    android:visibility="gone"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/doctor_dates_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/select_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="@string/select_time"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/date_layout"
+
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/date_layout"
+                app:layout_constraintTop_toBottomOf="@+id/date_layout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/doctor_times_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:visibility="visible"
+
+                app:layout_constraintTop_toBottomOf="@+id/select_time_tv" />
+
+            <TextView
+                android:id="@+id/add_promo_code_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="@string/add_promo_code"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/doctor_times_recycler"
+                app:layout_constraintStart_toStartOf="@+id/select_time_tv"
+                app:layout_constraintTop_toBottomOf="@+id/doctor_times_recycler" />
+
+            <EditText
+                android:id="@+id/enter_promo_code_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/black_border_white_round_shape"
+                android:gravity="center"
+                android:hint="@string/enter_promo_code"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:visibility="gone"
+
+                app:layout_constraintTop_toBottomOf="@+id/add_promo_code_tv" />
+
+            <Button
+                android:id="@+id/confirm_attend_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="204dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/ornage_round_shape"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+
+                app:layout_constraintEnd_toEndOf="@+id/doctor_times_recycler"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/doctor_times_recycler"
+                app:layout_constraintTop_toBottomOf="@+id/enter_promo_code_edt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
